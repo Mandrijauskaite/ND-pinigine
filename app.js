@@ -9,16 +9,44 @@ function rand(min, max) {
 Sukurti masyvą (piniginę), kurio ilgis yra atsitiktinis nuo 10 iki 30, 
 o reikšmės atsitiktiniai skaičiai nuo 0 iki 10 (pinigai);
 */
+let pinigine = [];
+let pinigas = 0;
+
+for (let i = 0; i < rand(10, 30); i++) { // rand(10, 30) - ilgis yra atsitiktinis nuo 10 iki 30
+    pinigas = rand(0, 10);
+    if (pinigas <= 2) {
+        pinigas = 0;
+        pinigas.push(pinigas)
+    }
+    else {
+        pinigine.push(pinigas)
+    }
+}
+
+console.log(pinigine);
 
 /* 2 uždavinys 
 Naudojant ciklą apskaičiuoti masyvo iš 1 
 uždavinio reikšmių (pinigų esančių piniginėje) sumą;
 */
+let suma = 0;
+for (let i = 0; i < pinigine.lenght; i++) {
+    suma = suma + pinigine[i]
+}
+console.log(suma);
 
 /* 3 uždavinys 
 Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio 
 popierinių pinigų (skaičių didesnių už 2 ) reikšmių sumą;
 */
+let popieriniaiPinigai = 0;
+for (let i = 0; i < pinigine.length; i++) {
+    if (pinigine[i] > 2) {
+        popieriniaiPinigai += pinigine[i];  
+        console.log(pinigine[i]);
+    }
+}
+console.log('Popierinių pinigų didesnių už 2 yra: ${popieriniaiPinigai}');
 
 /* 4 uždavinys 
 Išleisti visus metalinius pinigus 
@@ -27,10 +55,18 @@ Išleisti visus metalinius pinigus
 
 
 /* 5 uždavinys 
-ISurasti didžiausią reikšmę 1 uždavinio masyve ir paskaičiuoti 
+Surasti didžiausią reikšmę 1 uždavinio masyve ir paskaičiuoti 
 kiek tokių didžiausių reikšmių masyve yra;
 */
-
+let didziausia = Math.max(...pinigine);
+let maxSum = 0;
+for (let i = 0; i < pinigine.length; i++) {
+    if (pinigine[i] === didziausia); {
+        maxSum ++
+    }
+    
+}
+console.log('didžiausia reikšmė masyve: ${didziausia}; tokių reikšmių masyve yra: ${maxSum}');
 
 /* 6 uždavinys 
 Visus masyvo elementus, kurie yra lygūs 0, pakeisti į 
